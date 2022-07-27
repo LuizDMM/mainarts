@@ -1,3 +1,4 @@
+import { ProductsProvider } from 'contexts/products.context'
 import { UserProvider } from 'contexts/user.context'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -10,9 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Router>
-      <UserProvider>
-        <App />
-      </UserProvider>
+      <ProductsProvider>
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </ProductsProvider>
     </Router>
   </React.StrictMode>
 )
